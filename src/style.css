@@ -27,9 +27,7 @@ body{
     z-index: -1;
     playback-rate: 1em;
 }
-.mobile{
-    display: none;
-}
+
 
 .text-container{
     text-align: center;
@@ -41,11 +39,12 @@ body{
     max-width: 100%;
 
 }
-@media(max-width:500px){
-   .city{ font-size: 23px;
+@media only screen and (max-width:480px){
+   .mobile{
+    font-size: 25px;
    }
-   .date{
-    font-size: 23px;
+   .text-container{
+    max-width: 75%;
    }
 }
 footer{

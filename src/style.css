@@ -41,10 +41,10 @@ body{
 }
 @media only screen and (max-width:480px){
    .mobile{
-    font-size: 25px;
+    font-size: 18px;
    }
    .text-container{
-    max-width: 75%;
+    max-width: 85%;
    }
 }
 footer{

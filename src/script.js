@@ -15,3 +15,22 @@ timeJohannesburgElement.innerHTML=johannesburgTime.format("h:mm:ss [<small>]A[</
 dateTokyoElement.innerHTML=tokyoTime.format("MMMM Do YYYY");
 timeTokyoElement.innerHTML=tokyoTime.format("h:mm:ss [<small>]A[</small>]");
 }, 1000);
+
+function updateCity(event){
+let cityTimezone = event.target.value;
+let cityName=cityTimezone.replace("_"," ").split("/")[1];
+let cityTime = moment().tz(cityTimezone);
+let citiesElement = document.querySelector("#cities");
+citiesElement.innerHTML=`
+  <div class="city">
+  <div>
+      <h2>${cityName}</h2>
+        <div class="date">${cityTime.format("MMMM Do YYYY")}</div>
+    </div> 
+        <div class="time">${cityTime.format("h:mm:ss")} <small>${cityTime.format("A")}</small></div>
+    </div>
+    `;
+}
+
+let citiesSelectElement=document.querySelector("#city");
+citiesSelectElement.addEventListener("change",updateCity);
